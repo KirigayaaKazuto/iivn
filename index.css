@@ -1,0 +1,501 @@
+@font-face {
+  font-family: 'CenturyRegular';
+  src: url('./fonts/centurygothic.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'CenturyBold';
+  src: url('./fonts/centurygothic_bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Jersey';
+  src: url('./fonts/Jersey10-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Italiana';
+  src: url('./fonts/Italiana-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'ViaodaLibre';
+  src: url('./fonts/ViaodaLibre-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Haetten';
+  src: url('./fonts/haettenschweiler.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+:root {
+  --container--width: 356px;
+  --container--padding: 17px;
+  --secondary: rgba(15, 31, 28, 0.5);
+}
+
+body {
+  font-family: CenturyRegular, sans-serif;
+  background-color: #ffffff;
+  /* color: #0f1f1c; */
+  margin: 0 auto;
+  /* background-color: #524d4d; */
+  width: 390px;
+}
+
+.none {
+  display: none !important;
+}
+
+.container {
+  max-width: var(--container--width);
+  margin: 0 var(--container--padding);
+  /* padding: 0 var(--container--padding); */
+}
+
+@media (max-width: 393px) {
+  header {
+  }
+  .nav {
+    margin-top: 17px;
+    display: flex;
+    align-items: center;
+    column-gap: 194px;
+  }
+  .nav__list1 li {
+    color: #000000;
+    font-size: 7px;
+  }
+
+  .nav__list {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    width: 60px;
+    font-family: 'CenturyRegular';
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: height 0.4s ease;
+    height: 24px; /* Высота закрытого состояния */
+  }
+
+  .nav__list.nav__listOpen {
+    height: 74px; /* Высота открытого состояния */
+  }
+
+  .nav__trigger {
+    color: white;
+    background-color: #000000;
+    border-radius: 5px;
+    padding: 4px 14px;
+    font-size: 7px;
+  }
+
+  .nav__list-contacts {
+    color: black;
+    text-align: center;
+    font-size: 7px;
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .nav__listOpen .nav__list-contacts {
+    opacity: 1;
+    max-height: 20px;
+    transform: translateY(0);
+  }
+
+  .nav__listOpen .nav__list-contacts:nth-child(2) {
+    padding-top: 9px;
+    transition-delay: 0.1s;
+    font-size: 6px;
+  }
+
+  .nav__listOpen .nav__list-contacts:nth-child(3) {
+    padding-top: 19px;
+    transition-delay: 0.2s;
+    font-size: 6px;
+  }
+
+  .nav__listGraph {
+    width: 82px;
+  }
+
+  .intro {
+  }
+  .ticker {
+    overflow: hidden;
+    width: 100%;
+    /* padding: 5px 0 120px;
+     position: fixed;
+    bottom: -50px;
+    left: 0; */
+    font-family: 'Montserrat', Arial;
+  }
+
+  .ticker-title {
+    font-family: 'Jersey';
+    width: 2700px;
+    margin-top: 7px;
+    color: #000000;
+    font-size: 48px;
+    text-transform: uppercase;
+    /* text-shadow: 0 0 2px #000000; */
+  }
+
+  .ticker-title > * {
+    display: inline-block;
+    margin-right: 50px;
+    animation: title 23s infinite linear;
+  }
+
+  @keyframes title {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-233px);
+    }
+    50% {
+      transform: translateX(-466px);
+    }
+    75% {
+      transform: translateX(-699px);
+    }
+    100% {
+      transform: translateX(-932px);
+    }
+  }
+
+  .designer {
+    background-image: url(./img/glavnaya/fon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 20px;
+    /* width: 393px;
+    height: 874px; */
+  }
+
+  .designer__inner {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 13.54px;
+    margin-bottom: 7px;
+    img {
+      width: 202px;
+      height: 284px;
+    }
+  }
+
+  .designer__block {
+    position: relative;
+    top: -14px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    width: 147px;
+    span {
+      font-family: 'Italiana';
+      font-size: 48px;
+    }
+    p {
+      font-family: 'CenturyRegular';
+      font-size: 7px;
+      text-align: center;
+    }
+  }
+  .aboutMe {
+    h4 {
+      color: #ffffff;
+      padding-left: 120px;
+      font-family: ViaodaLibre;
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+  }
+  .aboutMe__block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+  }
+  .aboutMe_block-blog {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    h5 {
+      text-align: center;
+      width: 104px;
+      height: 27px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      font-size: 7px;
+      color: #000000;
+      padding: 9px;
+    }
+    p {
+      text-align: right;
+      width: 174px;
+      font-size: 6px;
+      color: #ffffff;
+    }
+  }
+  .two {
+    padding-top: 4.5px !important;
+  }
+
+  .create {
+    margin-top: 17px;
+    position: relative;
+    z-index: 1;
+    height: 435px;
+    overflow-x: hidden;
+  }
+  .create__plate {
+    padding-top: 11px;
+    width: 390px;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .create__plateCol1 {
+    display: flex;
+    flex-direction: column;
+    img:nth-child(1n) {
+      position: relative;
+      left: -2px;
+    }
+    img:nth-child(2n) {
+      position: relative;
+      left: -40px;
+      margin-top: 60px;
+    }
+    img:nth-child(3n) {
+      position: relative;
+      left: -50px;
+      margin-top: 11px;
+    }
+  }
+  .create__block,
+  .create-img {
+    position: relative;
+    z-index: 2;
+  }
+  .create__plateCol2 {
+    display: flex;
+    flex-direction: column;
+    img:nth-child(1n) {
+      margin-top: 20px;
+      position: relative;
+      right: -20px;
+    }
+    img:nth-child(2n) {
+      position: relative;
+      right: -80px;
+      margin-top: 185px;
+      /* overflow: hidden; */
+    }
+  }
+  .create {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* Исходное положение изображений */
+  .create__plateCol1 img {
+    position: absolute;
+    left: 0;
+    transform-origin: center center; /* Центр вращения */
+  }
+  .create__plateCol2 img {
+    position: absolute;
+    right: 0;
+    transform-origin: center center;
+  }
+
+  /* Анимации с вращением */
+  @keyframes slideRight {
+    0% {
+      transform: translateX(-100%) rotate(0deg);
+    }
+    70% {
+      transform: translateX(100%) rotate(360deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(100%) rotate(0deg);
+    }
+    70% {
+      transform: translateX(-100%) rotate(-360deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+
+  /* Класс для активации анимации */
+  .animate-on-scroll .create__plateCol1 img {
+    animation: slideRight 3s ease-in-out;
+  }
+  .animate-on-scroll .create__plateCol2 img {
+    animation: slideLeft 3s ease-in-out;
+  }
+  .create-img {
+    /* width: 308px; */
+    padding-left: 10px;
+    height: 130px;
+  }
+  .create__block {
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 15px;
+  }
+  .create__block-img {
+    /* padding-top: 40px; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 13px;
+    img {
+      /* height: 51px;
+        width: 51px; */
+    }
+  }
+  .create__inner h5 {
+    font-family: ViaodaLibre;
+    /* margin-top: 32px; */
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  .create__category {
+    margin-top: 9.58px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+
+  .create-row {
+    display: flex;
+    column-gap: 5px;
+  }
+  .create-col {
+    font-family: ViaodaLibre;
+    font-size: 7px;
+    color: #ffffff;
+    padding: 4px 11px;
+    /* width: 62px;
+    height: 14.85px; */
+    border: 2px solid #1c150e;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .cases {
+    padding-top: 62px;
+  }
+  .cases__button {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 7px;
+    width: 104px;
+    height: 27px;
+    border: 1px solid #1c150e;
+    border-radius: 5px;
+
+    font-family: 'Century Gothic';
+    font-size: 9px;
+  }
+  .cases__number {
+    padding-left: 7px;
+    font-family: 'Italiana';
+    font-size: 48px;
+  }
+  .cases__name {
+    font-family: 'Haetten';
+    font-size: 178px;
+    position: relative;
+    top: -25px;
+  }
+  .cases__innerBlock {
+    display: flex;
+    flex-direction: column;
+    row-gap: 49px;
+  }
+  .cases__block {
+    width: 390px;
+    padding: 0 38px;
+    padding-top: 38px;
+    background-image: url(./img/glavnaya/cases/fon.png);
+    background-repeat: no-repeat;
+  }
+  .cases__text {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    row-gap: 4px;
+  }
+  .cases__inner {
+    display: flex;
+
+    flex-direction: column;
+    row-gap: 14px;
+  }
+  .footer {
+    padding-top: 365px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    padding-bottom: 44px;
+  }
+  .footer::before {
+    height: 580px;
+    width: 390px;
+    overflow: hidden;
+
+    content: '';
+    position: absolute;
+    top: -100px;
+
+    background-image: url(./img/glavnaya/cases/footerFon.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .footer__contacts {
+    font-size: 24px;
+  }
+  .footer__tg {
+    font-size: 14px;
+  }
+  .footer__number {
+    font-size: 14px;
+  }
+}
