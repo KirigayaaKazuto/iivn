@@ -62,7 +62,7 @@ body {
   /* padding: 0 var(--container--padding); */
 }
 
-@media (max-width: 393px) {
+@media (max-width: 423px) {
   header {
   }
   .nav {
